@@ -2286,3 +2286,7 @@
 2023-11-10 10:36:35,272 [INFO] ProjectBuilder:2457 - Time for Copy CMSIS : 1mS.
 2023-11-10 10:36:56,789 [INFO] DmaTabbedPanel:198 - Cannot restore the selected Tab for DMA
 2023-11-10 10:36:57,385 [INFO] Gpio:254 - dependency for GPIO []
+2023-11-10 11:20:58,523 [INFO] Activator:177 - 
+
+
+2023-11-10 11:20:58,524 [INFO] Activator:178 - !SESSION log4j initialized
