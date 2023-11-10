@@ -1,0 +1,14 @@
+/*
+ * fsm_input_processing.h
+ *
+ *  Created on: Nov 10, 2023
+ *      Author: ACER
+ */
+
+#ifndef INC_FSM_INPUT_PROCESSING_H_
+#define INC_FSM_INPUT_PROCESSING_H_
+
+#include "main.h"
+#include "global.h"
+
+#endif /* INC_FSM_INPUT_PROCESSING_H_ */

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="LED_Buffer"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="led_buffer"/>
+			<item value="G_7SEG_"/>
+			<item value="F_7SEG_"/>
+			<item value="E_7SEG_"/>
+			<item value="D_7SEG_"/>
+			<item value="C_7SEG_"/>
+			<item value="G_7SEG"/>
+			<item value="F_7SEG"/>
+			<item value="E_7SEG"/>
+			<item value="D_7SEG"/>
+			<item value="C_7SEG"/>
+			<item value="A_7SEG"/>
+			<item value="B_7SEG"/>
+		</list>
+		<list key="replacehistory">
+			<item value="LED_Buffer"/>
+			<item value="SEG6_"/>
+			<item value="SEG5_"/>
+			<item value="SEG4_"/>
+			<item value="SEG3_"/>
+			<item value="SEG2_"/>
+			<item value="SEG6"/>
+			<item value="SEG5"/>
+			<item value="SEG4"/>
+			<item value="SEG3"/>
+			<item value="SEG2"/>
+			<item value="SEG0"/>
+			<item value="SEG1"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="826"/>
+		<item key="DIALOG_Y_ORIGIN" value="288"/>
+		<item key="DIALOG_WIDTH" value="284"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

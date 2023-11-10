@@ -1,0 +1,2 @@
+output_display.c:12:6:display_7SEG	16	static
+output_display.c:59:6:update_7SEG	16	static

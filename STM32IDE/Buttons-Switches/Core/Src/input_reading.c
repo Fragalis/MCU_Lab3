@@ -20,12 +20,29 @@ static uint16_t flagForButtonHold[NO_OF_BUTTONS];
 // Counter for button hold in 1 second
 static uint16_t counterForButtonHold[NO_OF_BUTTONS];
 
+GPIO_PinState Read_Pin(unsigned char index) {
+	switch(index) {
+	case 1:
+		HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin);
+		break;
+	case 2:
+		HAL_GPIO_ReadPin(BUTTON_2_GPIO_Port, BUTTON_2_Pin);
+		break;
+	case 3:
+		HAL_GPIO_ReadPin(BUTTON_3_GPIO_Port, BUTTON_3_Pin);
+		break;
+	default:
+		break;
+	}
+	return GPIO_PIN_SET;
+}
+
 void button_reading(void)
 {
 	for(unsigned char i = 0; i < NO_OF_BUTTONS; ++i)
 	{
 		debounceButtonBuffer2[i] = debounceButtonBuffer1[i];
-		debounceButtonBuffer1[i] = HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin);
+		debounceButtonBuffer1[i] = Read_Pin(i);
 		if(debounceButtonBuffer1[i] == debounceButtonBuffer2[i])
 		{
 			buttonBuffer[i] = debounceButtonBuffer1[i];
@@ -41,7 +58,7 @@ void button_reading(void)
 				// If button is on hold for 1 second, update the flag
 				if(counterForButtonHold[i] >= DURATION_FOR_HOLD) {
 					flagForButtonHold[i] = 1;
-					//TODO
+					//TODO: Implement HOLD function
 				}
 			}
 
