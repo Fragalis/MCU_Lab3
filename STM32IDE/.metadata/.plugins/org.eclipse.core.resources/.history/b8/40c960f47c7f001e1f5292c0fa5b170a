@@ -1,0 +1,11 @@
+/*
+ * input_reading.c
+ *
+ *  Created on: Nov 10, 2023
+ *      Author: ACER
+ */
+
+#include "input_reading.h"
+
+static GPIO_PinState buttonBuffer[NO_OF_BUTTONS];
+

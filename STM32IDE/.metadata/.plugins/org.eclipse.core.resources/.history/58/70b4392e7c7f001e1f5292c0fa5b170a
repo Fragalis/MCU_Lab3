@@ -1,0 +1,19 @@
+/*
+ * global.h
+ *
+ *  Created on: Nov 10, 2023
+ *      Author: ACER
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+#include "main.h"
+
+// TIMER
+#define LED_CYCLE			500
+
+// INPUT
+#define NO_OF_BUTTONS 		1
+
+#endif /* INC_GLOBAL_H_ */
