@@ -5,8 +5,7 @@
  *      Author: ACER
  */
 
-#include "main.h"
-#include "input_reading.h"
+#include "input_processing.h"
 
 enum ButtonState{BUTTON_RELEASED, BUTTON_PRESSED, BUTTON_PRESSED_MORE_THAN_1_SECOND} ;
 enum ButtonState buttonState = BUTTON_RELEASED;
@@ -20,6 +19,7 @@ void fsm_for_input_processing(void){
 		}
 		break;
 	case BUTTON_PRESSED:
+		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 		if(!is_button_pressed(0)){
 			buttonState = BUTTON_RELEASED;
 		} else {

@@ -5,7 +5,7 @@
  *      Author: ACER
  */
 
-#include "main.h"
+#include "input_reading.h"
 
 //we aim to work with more than one buttons
 #define N0_OF_BUTTONS 				       1
@@ -16,10 +16,10 @@
 #define BUTTON_IS_PRESSED                  GPIO_PIN_RESET
 #define BUTTON_IS_RELEASED                 GPIO_PIN_SET
 
-//the buffer that the final result is stored after debouncing
+//the buffer that the final result is stored after de-bouncing
 static GPIO_PinState buttonBuffer[N0_OF_BUTTONS];
 
-//we define two buffers for debouncing
+//we define two buffers for de-bouncing
 static GPIO_PinState debounceButtonBuffer1[N0_OF_BUTTONS];
 static GPIO_PinState debounceButtonBuffer2[N0_OF_BUTTONS];
 
@@ -30,14 +30,25 @@ static uint8_t flagForButtonPress1s[N0_OF_BUTTONS];
 //after the button is pressed more than 1 second.
 static uint16_t counterForButtonPress1s[N0_OF_BUTTONS];
 
+GPIO_PinState Read_Pin(int index) {
+	switch(index) {
+	case 0:
+		return HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin);
+	case 1:
+		return HAL_GPIO_ReadPin(BUTTON_2_GPIO_Port, BUTTON_2_Pin);
+	case 2:
+		return HAL_GPIO_ReadPin(BUTTON_3_GPIO_Port, BUTTON_3_Pin);
+	}
+	return 0;
+}
+
 void button_reading(void){
-	for(char i = 0; i < N0_OF_BUTTONS; i ++){
+	for(int i = 0; i < N0_OF_BUTTONS; i ++){
 		debounceButtonBuffer2[i] = debounceButtonBuffer1[i];
 		debounceButtonBuffer1[i] = HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin);
 
-		if(debounceButtonBuffer1[i] == debounceButtonBuffer2[i])
+		if(debounceButtonBuffer1[i] == debounceButtonBuffer2[i]) {
 			buttonBuffer[i] = debounceButtonBuffer1[i];
-
 			if(buttonBuffer[i] == BUTTON_IS_PRESSED){
 			//if a button is pressed, we start counting
 				if(counterForButtonPress1s[i] < DURATION_FOR_AUTO_INCREASING){
@@ -52,6 +63,7 @@ void button_reading(void){
 				counterForButtonPress1s[i] = 0;
 				flagForButtonPress1s[i] = 0;
 			}
+		}
 	}
 }
 
@@ -64,3 +76,4 @@ unsigned char is_button_pressed_1s(unsigned char index){
 	if(index >= N0_OF_BUTTONS) return 0xff;
 	return (flagForButtonPress1s[index] == 1);
 }
+

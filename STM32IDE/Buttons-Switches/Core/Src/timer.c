@@ -5,8 +5,7 @@
  *      Author: ACER
  */
 
-#include "main.h"
-#include "input_reading.h"
+#include "timer.h"
 
 void HAL_TIM_PeriodElapsedCallBack(TIM_HandleTypeDef *htim)
 {
