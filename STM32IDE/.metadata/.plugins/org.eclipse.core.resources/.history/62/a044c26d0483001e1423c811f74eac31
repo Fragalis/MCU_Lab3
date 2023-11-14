@@ -12,8 +12,7 @@
 
 /* DEFINE SECTION */
 // TIMER
-#define TIMER_CYCLE					10
-#define BLINKY_CYCLE					500
+#define TIMER_CYCLE						10
 
 // INPUT
 #define NO_OF_BUTTONS 					3
@@ -23,5 +22,7 @@
 
 // OUTPUT
 #define NO_OF_LEDS						4
+
+/* VARIABLE SECTION */
 
 #endif /* INC_GLOBAL_H_ */

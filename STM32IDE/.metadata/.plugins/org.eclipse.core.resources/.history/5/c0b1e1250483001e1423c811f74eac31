@@ -76,7 +76,7 @@ void update_7SEG(void)
 			display_7SEG(LED_Buffer[index_led]);
 
 			index_led = 1;
-			set_timer7SEG(250);
+			set_timer7SEG(TIMER_CYCLE);
 		}
 		break;
 	case 1:
@@ -88,7 +88,7 @@ void update_7SEG(void)
 			display_7SEG(LED_Buffer[index_led]);
 
 			index_led = 2;
-			set_timer7SEG(250);
+			set_timer7SEG(TIMER_CYCLE);
 		}
 		break;
 	case 2:
@@ -100,7 +100,7 @@ void update_7SEG(void)
 			display_7SEG(LED_Buffer[index_led]);
 
 			index_led = 3;
-			set_timer7SEG(250);
+			set_timer7SEG(TIMER_CYCLE);
 		}
 		break;
 	case 3:
@@ -112,13 +112,19 @@ void update_7SEG(void)
 			display_7SEG(LED_Buffer[index_led]);
 
 			index_led = 0;
-			set_timer7SEG(250);
+			set_timer7SEG(TIMER_CYCLE);
 		}
 		break;
 	default:
+		HAL_GPIO_WritePin(GPIOA, EN0_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, EN1_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, EN2_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, EN3_Pin, GPIO_PIN_RESET);
+		display_7SEG(8);
 		break;
 	}
 }
+
 void update_buffer(unsigned char num1, unsigned char num2)
 {
 	LED_Buffer[0] = num1 / 10;
