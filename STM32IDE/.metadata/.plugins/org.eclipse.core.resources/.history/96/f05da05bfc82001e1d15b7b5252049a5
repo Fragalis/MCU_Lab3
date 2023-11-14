@@ -24,4 +24,6 @@
 // OUTPUT
 #define NO_OF_LEDS						4
 
+/* VARIABLE SECTION */
+
 #endif /* INC_GLOBAL_H_ */

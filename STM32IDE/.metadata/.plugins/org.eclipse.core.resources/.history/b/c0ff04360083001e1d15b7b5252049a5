@@ -44,7 +44,7 @@ void fsm_display_run(void) {
 			//TODO: Implement RED State
 			if(!is_button_pressed(0)) {
 				blinking_LED_RED();
-				update_buffer(editedRED, 2);
+				update_buffer(editedRED, editedRED);
 				if(is_button_pressed(1)) {
 					editedRED++;
 					editedRED = editedRED % 100;
@@ -63,7 +63,7 @@ void fsm_display_run(void) {
 			//TODO: Implement YELLOW State
 			if(!is_button_pressed(0)) {
 				blinking_LED_YELLOW();
-				update_buffer(editedYELLOW, 3);
+				update_buffer(editedYELLOW, editedYELLOW);
 				if(is_button_pressed(1)) {
 					editedYELLOW++;
 					editedYELLOW = editedYELLOW % 100;
@@ -82,7 +82,7 @@ void fsm_display_run(void) {
 			//TODO: Implement GREEN State
 			if(!is_button_pressed(0)) {
 				blinking_LED_GREEN();
-				update_buffer(editedGREEN, 4);
+				update_buffer(editedGREEN, editedGREEN);
 				if(is_button_pressed(1)) {
 					editedGREEN++;
 					editedGREEN = editedGREEN % 100;
