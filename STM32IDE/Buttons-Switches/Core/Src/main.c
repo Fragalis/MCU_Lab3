@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "timer.h"
+#include "fsm_display.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -90,18 +90,15 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
+  set_timer7SEG(TIMER_CYCLE);
+  set_timerLED(TIMER_CYCLE);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  set_timerLED(100);
   while (1)
   {
-	  if(timerLED_flag == 1) {
-		  HAL_GPIO_TogglePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin);
-		  set_timerLED(100);
-	  }
-	  //fsm_display_run();
+	fsm_display_run();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

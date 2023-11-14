@@ -1,4 +1,95 @@
-07:48:45 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/timer.o"
+../Core/Src/timer.c: In function 'set_timerLED':
+../Core/Src/timer.c:19:1: warning: control reaches end of non-void function [-Wreturn-type]
+   19 | }
+      | ^
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   8468	     44	   1660	  10172	   27bc	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+ 
+Finished building: Buttons-Switches.list
+ 
+
+13:12:11 Build Finished. 0 errors, 1 warnings. (took 1s.4ms)
+
+13:12:11 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-size   Buttons-Switches.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8468	     44	   1660	  10172	   27bc	Buttons-Switches.elf
+Finished building: default.size.stdout
+ 
+13:12:12 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-size   Buttons-Switches.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8468	     44	   1660	  10172	   27bc	Buttons-Switches.elf
+Finished building: default.size.stdout
+ 
+13:12:54 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/timer.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   8476	     44	   1660	  10180	   27c4	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:14:12 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/timer.o"
+../Core/Src/timer.c:16:6: error: conflicting types for 'set_timerLED'
+   16 | void set_timerLED(int duration) {
+      |      ^~~~~~~~~~~~
+In file included from ../Core/Src/timer.c:8:
+../Core/Inc/timer.h:17:5: note: previous declaration of 'set_timerLED' was here
+   17 | int set_timerLED(int duration);
+      |     ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/timer.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:14:34 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/timer.o"
+../Core/Src/output_display.c: In function 'display_traffic_LEDS':
+../Core/Src/output_display.c:158:16: error: invalid use of void expression
+  158 |    update_7SEG(set_timerLED(1000));
+      |                ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/output_display.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:14:51 **** Incremental Build of configuration Debug for project Buttons-Switches ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
 arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -8,7 +99,742 @@ arm-none-eabi-size   Buttons-Switches.elf
 arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
 arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
    text	   data	    bss	    dec	    hex	filename
-   7012	     20	   1652	   8684	   21ec	Buttons-Switches.elf
+   8464	     44	   1660	  10168	   27b8	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:15:53 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/timer.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   8464	     44	   1660	  10168	   27b8	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:17:01 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/timer.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   8648	     44	   1668	  10360	   2878	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:20:44 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/timer.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   7992	     32	   1680	   9704	   25e8	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:21:49 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   7992	     32	   1680	   9704	   25e8	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:23:24 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   7992	     32	   1680	   9704	   25e8	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:24:38 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   8688	     32	   1680	  10400	   28a0	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+ 
+Finished building: Buttons-Switches.list
+ 
+13:26:08 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   8688	     32	   1680	  10400	   28a0	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:26:32 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   8688	     32	   1680	  10400	   28a0	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:27:25 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+   text	   data	    bss	    dec	    hex	filename
+   8692	     32	   1680	  10404	   28a4	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:28:19 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   8696	     32	   1680	  10408	   28a8	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+Finished building: Buttons-Switches.list
+ 
+ 
+ 
+13:38:06 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   8692	     32	   1680	  10404	   28a4	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+ 
+Finished building: Buttons-Switches.list
+ 
+13:39:47 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   7996	     32	   1680	   9708	   25ec	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:40:15 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   7996	     32	   1680	   9708	   25ec	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:41:35 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-size   Buttons-Switches.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7996	     32	   1680	   9708	   25ec	Buttons-Switches.elf
+Finished building: default.size.stdout
+ 
+13:42:20 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   8688	     32	   1680	  10400	   28a0	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:47:07 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+../Core/Src/output_display.c: In function 'update_7SEG':
+../Core/Src/output_display.c:67:10: error: 'index_led' undeclared (first use in this function)
+   67 |  switch (index_led)
+      |          ^~~~~~~~~
+../Core/Src/output_display.c:67:10: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/output_display.c:75:28: error: 'index' undeclared (first use in this function)
+   75 |    display_7SEG(LED_Buffer[index]);
+      |                            ^~~~~
+../Core/Src/output_display.c: In function 'display_traffic_LEDS':
+../Core/Src/output_display.c:161:4: error: 'index_led' undeclared (first use in this function)
+  161 |    index_led = 0;
+      |    ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/output_display.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:47:37 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+../Core/Src/output_display.c: In function 'update_7SEG':
+../Core/Src/output_display.c:67:10: error: 'index_led' undeclared (first use in this function)
+   67 |  switch (index_led)
+      |          ^~~~~~~~~
+../Core/Src/output_display.c:67:10: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/output_display.c: In function 'display_traffic_LEDS':
+../Core/Src/output_display.c:161:4: error: 'index_led' undeclared (first use in this function)
+  161 |    index_led = 0;
+      |    ^~~~~~~~~
+make: *** [Core/Src/subdir.mk:49: Core/Src/output_display.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+13:47:54 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   7992	     32	   1680	   9704	   25e8	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+Finished building: Buttons-Switches.list
+ 
+ 
+ 
+13:48:06 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   7992	     32	   1680	   9704	   25e8	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+Finished building: Buttons-Switches.list
+ 
+ 
+ 
+13:49:35 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9080	     32	   1688	  10800	   2a30	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:51:37 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9100	     32	   1688	  10820	   2a44	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:53:07 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9044	     32	   1688	  10764	   2a0c	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:53:16 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9044	     32	   1688	  10764	   2a0c	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:54:19 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9020	     32	   1688	  10740	   29f4	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:55:10 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9020	     32	   1688	  10740	   29f4	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+13:57:50 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9092	     32	   1688	  10812	   2a3c	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+14:01:13 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9120	     32	   1688	  10840	   2a58	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+14:02:05 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9112	     32	   1688	  10832	   2a50	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+ 
+Finished building: Buttons-Switches.list
+ 
+14:02:43 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9112	     32	   1688	  10832	   2a50	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+14:04:08 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   8852	     32	   1688	  10572	   294c	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+14:04:43 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9088	     32	   1688	  10808	   2a38	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+Finished building: Buttons-Switches.list
+ 
+ 
+ 
+14:10:43 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9096	     32	   1688	  10816	   2a40	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+14:12:13 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9060	     32	   1688	  10780	   2a1c	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+14:14:01 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9096	     32	   1688	  10816	   2a40	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+14:15:40 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9052	     32	   1688	  10772	   2a14	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+14:17:04 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/output_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/output_display.d" -MT"Core/Src/output_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/output_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9088	     32	   1688	  10808	   2a38	Buttons-Switches.elf
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.hex
+Finished building: Buttons-Switches.bin
+ 
+Finished building: Buttons-Switches.list
+ 
+ 
+14:17:41 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+   text	   data	    bss	    dec	    hex	filename
+   9088	     32	   1688	  10808	   2a38	Buttons-Switches.elf
 arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
 Finished building: default.size.stdout
  

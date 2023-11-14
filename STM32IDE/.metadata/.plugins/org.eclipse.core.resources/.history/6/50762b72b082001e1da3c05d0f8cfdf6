@@ -1,0 +1,131 @@
+/*
+ * fsm_output_display.c
+ *
+ *  Created on: Nov 14, 2023
+ *      Author: ACER
+ */
+
+#include "fsm_output_display.h"
+
+enum TrafficLightState {
+	INIT,
+	RED_GREEN,
+	RED_YELLOW,
+	GREEN_RED,
+	YELLOW_RED,
+	ERROR_STATE
+};
+
+enum TrafficLightState trafficLightState = INIT;
+
+int counterRED = 0;
+int counterYELLOW = 0;
+int counterGREEN = 0;
+
+void display_traffic_LEDS(void)
+{
+	switch(trafficLightState)
+	{
+	case INIT:
+		trafficLightState = RED_GREEN;
+		if(counterRED != (counterYELLOW + counterGREEN)) {
+			trafficLightState = ERROR_STATE;
+		}
+		break;
+	case RED_GREEN:
+		HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_1_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_GREEN_1_Pin, GPIO_PIN_SET);
+
+		HAL_GPIO_WritePin(GPIOA, LED_RED_2_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_2_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_GREEN_2_Pin, GPIO_PIN_RESET);
+
+		if(timerLED_flag > 0) {
+			counterRED--;
+			counterGREEN--;
+			update_buffer(counterRED, counterGREEN);
+			//set_timerLED(1000);
+		}
+
+		if(counterGREEN <= 0) {
+			counterGREEN = durationGREEN;
+			trafficLightState = RED_YELLOW;
+		}
+		break;
+	case RED_YELLOW:
+		HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_1_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_GREEN_1_Pin, GPIO_PIN_SET);
+
+		HAL_GPIO_WritePin(GPIOA, LED_RED_2_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_2_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, LED_GREEN_2_Pin, GPIO_PIN_SET);
+
+		if(timerLED_flag > 0) {
+			counterRED--;
+			counterYELLOW--;
+			update_buffer(counterRED, counterYELLOW);
+			set_timerLED(1000);
+		}
+
+		if(counterYELLOW <= 0) {
+			counterRED = durationRED;
+			counterYELLOW = durationYELLOW;
+			trafficLightState = GREEN_RED;
+		}
+		break;
+	case GREEN_RED:
+		HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_1_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_GREEN_1_Pin, GPIO_PIN_RESET);
+
+		HAL_GPIO_WritePin(GPIOA, LED_RED_2_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_2_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_GREEN_2_Pin, GPIO_PIN_SET);
+
+		if(timerLED_flag > 0) {
+			counterGREEN--;
+			counterRED--;
+			update_buffer(counterGREEN, counterRED);
+			set_timerLED(1000);
+		}
+
+		if(counterGREEN <= 0) {
+			counterGREEN = durationGREEN;
+			trafficLightState = YELLOW_RED;
+		}
+		break;
+	case YELLOW_RED:
+		HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_1_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, LED_GREEN_1_Pin, GPIO_PIN_SET);
+
+		HAL_GPIO_WritePin(GPIOA, LED_RED_2_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_2_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_GREEN_2_Pin, GPIO_PIN_SET);
+
+		if(timerLED_flag > 0) {
+			counterYELLOW--;
+			counterRED--;
+			update_buffer(counterYELLOW, counterRED);
+			set_timerLED(1000);
+		}
+
+		if(counterYELLOW <= 0) {
+			counterYELLOW = durationYELLOW;
+			counterRED = durationRED;
+			trafficLightState = RED_GREEN;
+		}
+		break;
+	case ERROR_STATE:
+		//blinking_LED_RED();
+		//blinking_LED_YELLOW();
+		//blinking_LED_GREEN();
+		update_buffer(88, 88);
+		break;
+	default:
+		break;
+	}
+}
+

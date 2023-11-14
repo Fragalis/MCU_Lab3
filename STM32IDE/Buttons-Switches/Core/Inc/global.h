@@ -12,9 +12,10 @@
 
 /* DEFINE SECTION */
 // TIMER
+#define TIMER_CYCLE						10
 
 // INPUT
-#define NO_OF_BUTTONS 					1
+#define NO_OF_BUTTONS 					3
 #define DURATION_FOR_HOLD				100
 #define BUTTON_IS_PRESSED				GPIO_PIN_RESET
 #define BUTTON_IS_RELEASED				GPIO_PIN_SET

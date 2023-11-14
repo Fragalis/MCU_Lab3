@@ -1,4 +1,4 @@
-timer.c:15:6:set_timerLED	16	static
-timer.c:20:6:set_timer7SEG	16	static
-timer.c:25:6:timer_run	4	static
-timer.c:37:6:HAL_TIM_PeriodElapsedCallBack	16	static
+timer.c:16:6:set_timerLED	16	static
+timer.c:21:6:set_timer7SEG	16	static
+timer.c:26:6:timer_run	4	static
+timer.c:34:6:HAL_TIM_PeriodElapsedCallback	16	static
