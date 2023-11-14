@@ -13,6 +13,7 @@ static GPIO_PinState buttonBuffer[NO_OF_BUTTONS];
 // The buffer for debouncing
 static GPIO_PinState debounceButtonBuffer1[NO_OF_BUTTONS];
 static GPIO_PinState debounceButtonBuffer2[NO_OF_BUTTONS];
+static GPIO_PinState debounceButtonBuffer3[NO_OF_BUTTONS];
 
 // Flag for button hold in 1 second
 static uint16_t flagForButtonHold[NO_OF_BUTTONS];
@@ -22,13 +23,13 @@ static uint16_t counterForButtonHold[NO_OF_BUTTONS];
 
 GPIO_PinState Read_Pin(unsigned char index) {
 	switch(index) {
-	case 1:
+	case 0:
 		HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin);
 		break;
-	case 2:
+	case 1:
 		HAL_GPIO_ReadPin(BUTTON_2_GPIO_Port, BUTTON_2_Pin);
 		break;
-	case 3:
+	case 2:
 		HAL_GPIO_ReadPin(BUTTON_3_GPIO_Port, BUTTON_3_Pin);
 		break;
 	default:
@@ -41,14 +42,24 @@ void button_reading(void)
 {
 	for(unsigned char i = 0; i < NO_OF_BUTTONS; ++i)
 	{
+		debounceButtonBuffer3[i] = debounceButtonBuffer2[i];
 		debounceButtonBuffer2[i] = debounceButtonBuffer1[i];
-		debounceButtonBuffer1[i] = Read_Pin(i);
-		if(debounceButtonBuffer1[i] == debounceButtonBuffer2[i])
+		switch(i) {
+		case 0:
+			debounceButtonBuffer1[i] = HAL_GPIO_ReadPin(BUTTON_1_GPIO_Port, BUTTON_1_Pin);
+			break;
+		case 1:
+			debounceButtonBuffer1[i] = HAL_GPIO_ReadPin(BUTTON_2_GPIO_Port, BUTTON_2_Pin);
+			break;
+		case 2:
+			debounceButtonBuffer1[i] = HAL_GPIO_ReadPin(BUTTON_3_GPIO_Port, BUTTON_3_Pin);
+			break;
+		default:
+			debounceButtonBuffer1[i] = BUTTON_IS_RELEASED;
+		}
+		if((debounceButtonBuffer1[i] == debounceButtonBuffer2[i]) && (debounceButtonBuffer2[i] == debounceButtonBuffer3[i]))
 		{
 			buttonBuffer[i] = debounceButtonBuffer1[i];
-			// Reset counter and flag for every button signal
-			counterForButtonHold[i] = 0;
-			flagForButtonHold[i] = 0;
 
 			// If button is pressed, update the counter
 			if(buttonBuffer[i] == BUTTON_IS_PRESSED)
@@ -59,8 +70,11 @@ void button_reading(void)
 					flagForButtonHold[i] = 1;
 					//TODO: Implement HOLD function
 				}
+			} else {
+				// If button is released then reset counter and flag
+				counterForButtonHold[i] = 0;
+				flagForButtonHold[i] = 0;
 			}
-
 		}
 	}
 }

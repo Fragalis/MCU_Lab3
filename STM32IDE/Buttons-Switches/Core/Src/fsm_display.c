@@ -17,29 +17,35 @@ enum DisplayState {
 
 enum DisplayState displayState = INIT;
 
+int editedRED = 0;
+
 void fsm_display_run(void) {
 	switch(displayState) {
 		case INIT:
+			editedRED = durationRED;
 			displayState = NORMAL_STATE;
 			break;
 		case NORMAL_STATE:
 			//TODO: Implement Normal State
-			display_traffic_LEDS();
+			//display_traffic_LEDS();
 			if(is_button_pressed(0)) {
+				reset_LEDS();
 				displayState = BLINKY_RED;
 			}
 			break;
 		case BLINKY_RED:
 			//TODO: Implement RED State
-//			if(is_button_pressed(1)) {
-//				editedRED++;
-//				editedRED = editedRED % 100;
-//			}
-//			if(is_button_pressed(2)) {
-//				durationRED = editedRED;
-//			}
+			blinking_LED_RED();
+			update_buffer(editedRED, editedRED);
+			if(is_button_pressed(1)) {
+				editedRED++;
+				editedRED = editedRED % 100;
+			}
+			if(is_button_pressed(2)) {
+				durationRED = editedRED;
+			}
 			if(is_button_pressed(0)) {
-				displayState = BLINKY_YELLOW;
+				displayState = INIT;
 			}
 			break;
 		case BLINKY_YELLOW:
@@ -71,5 +77,5 @@ void fsm_display_run(void) {
 		default:
 			break;
 	}
-	update_7SEG();
+	//update_7SEG();
 }

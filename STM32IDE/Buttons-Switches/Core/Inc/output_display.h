@@ -24,5 +24,6 @@ void display_traffic_LEDS(void);
 void blinking_LED_RED(void);
 void blinking_LED_YELLOW(void);
 void blinking_LED_GREEN(void);
+void reset_LEDS(void);
 
 #endif /* INC_OUTPUT_DISPLAY_H_ */

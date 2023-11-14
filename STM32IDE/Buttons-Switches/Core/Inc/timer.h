@@ -10,6 +10,7 @@
 
 #include "main.h"
 #include "global.h"
+#include "input_reading.h"
 
 extern int timerLED_flag;
 extern int timer7SEG_flag;

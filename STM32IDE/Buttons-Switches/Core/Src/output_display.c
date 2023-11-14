@@ -76,7 +76,7 @@ void update_7SEG(void)
 			display_7SEG(LED_Buffer[index_led]);
 
 			index_led = 1;
-			set_timer7SEG(TIMER_CYCLE);
+			set_timer7SEG(250);
 		}
 		break;
 	case 1:
@@ -88,7 +88,7 @@ void update_7SEG(void)
 			display_7SEG(LED_Buffer[index_led]);
 
 			index_led = 2;
-			set_timer7SEG(TIMER_CYCLE);
+			set_timer7SEG(250);
 		}
 		break;
 	case 2:
@@ -100,7 +100,7 @@ void update_7SEG(void)
 			display_7SEG(LED_Buffer[index_led]);
 
 			index_led = 3;
-			set_timer7SEG(TIMER_CYCLE);
+			set_timer7SEG(250);
 		}
 		break;
 	case 3:
@@ -112,7 +112,7 @@ void update_7SEG(void)
 			display_7SEG(LED_Buffer[index_led]);
 
 			index_led = 0;
-			set_timer7SEG(TIMER_CYCLE);
+			set_timer7SEG(250);
 		}
 		break;
 	default:
@@ -253,7 +253,7 @@ void display_traffic_LEDS(void)
 		}
 		break;
 	case ERROR_STATE:
-		//blinking_LED_RED();
+		blinking_LED_RED();
 		//blinking_LED_YELLOW();
 		//blinking_LED_GREEN();
 		break;
@@ -262,3 +262,20 @@ void display_traffic_LEDS(void)
 	}
 }
 
+void blinking_LED_RED(void) {
+	if(timerLED_flag > 0) {
+		HAL_GPIO_TogglePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin);
+		HAL_GPIO_TogglePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin);
+		set_timerLED(BLINKY_CYCLE);
+	}
+}
+
+void reset_LEDS(void) {
+	HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOA, LED_YELLOW_1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOA, LED_GREEN_1_Pin, GPIO_PIN_SET);
+
+	HAL_GPIO_WritePin(GPIOA, LED_RED_2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOA, LED_YELLOW_2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOA, LED_GREEN_2_Pin, GPIO_PIN_SET);
+}

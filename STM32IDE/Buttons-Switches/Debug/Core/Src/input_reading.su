@@ -1,4 +1,4 @@
-input_reading.c:23:15:Read_Pin	16	static
-input_reading.c:40:6:button_reading	24	static
-input_reading.c:68:15:is_button_pressed	16	static
-input_reading.c:74:15:is_button_hold	16	static
+input_reading.c:24:15:Read_Pin	16	static
+input_reading.c:41:6:button_reading	24	static
+input_reading.c:82:15:is_button_pressed	16	static
+input_reading.c:88:15:is_button_hold	16	static
