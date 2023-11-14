@@ -1,8 +1,9 @@
 output_display.c:17:6:display_7SEG	16	static
 output_display.c:66:6:update_7SEG	8	static
-output_display.c:128:6:update_buffer	16	static
-output_display.c:151:6:display_traffic_LEDS	8	static
-output_display.c:265:6:blinking_LED_RED	8	static
-output_display.c:273:6:blinking_LED_YELLOW	8	static
-output_display.c:281:6:blinking_LED_GREEN	8	static
-output_display.c:290:6:reset_LEDS	8	static
+output_display.c:123:6:update_buffer	16	static
+output_display.c:146:6:reset_state	16	static
+output_display.c:150:6:display_traffic_LEDS	8	static
+output_display.c:272:6:blinking_LED_RED	8	static
+output_display.c:280:6:blinking_LED_YELLOW	8	static
+output_display.c:288:6:blinking_LED_GREEN	8	static
+output_display.c:297:6:reset_LEDS	8	static

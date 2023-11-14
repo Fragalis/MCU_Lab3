@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="r7SEG"/>
+		<item key="selection" value="RED"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="YELLOW"/>
+			<item value="_RED"/>
+			<item value="TIMER_CYCLE"/>
 			<item value="rLED"/>
 			<item value="LED"/>
 			<item value="_duration"/>
@@ -20,11 +23,12 @@
 			<item value="C_7SEG_"/>
 			<item value="G_7SEG"/>
 			<item value="F_7SEG"/>
-			<item value="E_7SEG"/>
-			<item value="D_7SEG"/>
-			<item value="C_7SEG"/>
 		</list>
 		<list key="replacehistory">
+			<item value="RED"/>
+			<item value="_GREEN"/>
+			<item value="_YELLOW"/>
+			<item value="250"/>
 			<item value="r7SEG"/>
 			<item value="7SEG"/>
 			<item value="_counter"/>
@@ -36,10 +40,6 @@
 			<item value="SEG2_"/>
 			<item value="SEG6"/>
 			<item value="SEG5"/>
-			<item value="SEG4"/>
-			<item value="SEG3"/>
-			<item value="SEG2"/>
-			<item value="SEG0"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

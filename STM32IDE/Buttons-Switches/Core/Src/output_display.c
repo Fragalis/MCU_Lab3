@@ -116,11 +116,6 @@ void update_7SEG(void)
 		}
 		break;
 	default:
-		HAL_GPIO_WritePin(GPIOA, EN0_Pin, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOA, EN1_Pin, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOA, EN2_Pin, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOA, EN3_Pin, GPIO_PIN_RESET);
-		display_7SEG(8);
 		break;
 	}
 }
@@ -148,6 +143,10 @@ int counterRED = 0;
 int counterYELLOW = 0;
 int counterGREEN = 0;
 
+void reset_state(unsigned char signal) {
+	if(signal) trafficLightState = INIT;
+}
+
 void display_traffic_LEDS(void)
 {
 	switch(trafficLightState)
@@ -160,7 +159,6 @@ void display_traffic_LEDS(void)
 		index_led = 0;
 		if(counterRED != (counterYELLOW + counterGREEN)) {
 			trafficLightState = ERROR_STATE;
-			index_led = -1;
 		}
 		break;
 	case RED_GREEN:
@@ -253,9 +251,18 @@ void display_traffic_LEDS(void)
 		}
 		break;
 	case ERROR_STATE:
-		blinking_LED_RED();
-		//blinking_LED_YELLOW();
-		//blinking_LED_GREEN();
+		if(timerLED_flag > 0) {
+			HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOA, LED_YELLOW_1_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOA, LED_GREEN_1_Pin, GPIO_PIN_RESET);
+
+			HAL_GPIO_WritePin(GPIOA, LED_RED_2_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOA, LED_YELLOW_2_Pin, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOA, LED_GREEN_2_Pin, GPIO_PIN_RESET);
+
+			update_buffer(88, 88);
+			set_timerLED(1000);
+		}
 		break;
 	default:
 		break;

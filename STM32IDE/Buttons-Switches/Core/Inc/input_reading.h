@@ -14,5 +14,6 @@
 void button_reading(void);
 unsigned char is_button_pressed(unsigned char index);
 unsigned char is_button_hold(unsigned char index);
+unsigned char is_button_released(unsigned char index);
 
 #endif /* INC_INPUT_READING_H_ */

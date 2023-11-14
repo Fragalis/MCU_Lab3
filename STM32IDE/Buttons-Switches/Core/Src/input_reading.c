@@ -89,3 +89,9 @@ unsigned char is_button_hold(unsigned char index) {
 	if((index < 0) || (index >= NO_OF_BUTTONS)) return 0xff;
 	return (flagForButtonHold[index] == 1);
 }
+
+unsigned char is_button_released(unsigned char index) {
+	if((index < 0) || (index >= NO_OF_BUTTONS)) return 0xff;
+	return (buttonBuffer[index] == BUTTON_IS_RELEASED);
+
+}
