@@ -127,14 +127,6 @@ void update_buffer(unsigned char num1, unsigned char num2)
 	LED_Buffer[3] = num2 % 10;
 }
 
-void blinking_LED_RED(void) {
-	if(timerLED_flag > 0) {
-		HAL_GPIO_TogglePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin);
-		HAL_GPIO_TogglePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin);
-		set_timerLED(BLINKY_CYCLE);
-	}
-}
-
 void reset_LEDS(void) {
 	HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(GPIOA, LED_YELLOW_1_Pin, GPIO_PIN_SET);
