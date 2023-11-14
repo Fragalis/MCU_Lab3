@@ -19,7 +19,6 @@ enum DisplayState displayState = INIT;
 
 int editedRED = 0;
 int editedYELLOW = 0;
-int editedGREEN = 0;
 
 void fsm_display_run(void) {
 	switch(displayState) {
@@ -62,22 +61,19 @@ void fsm_display_run(void) {
 				durationYELLOW = editedYELLOW;
 			}
 			if(is_button_pressed(0)) {
-				reset_LEDS();
 				displayState = BLINKY_GREEN;
 			}
 			break;
 		case BLINKY_GREEN:
 			//TODO: Implement GREEN State
-			blinking_LED_GREEN();
-			if(is_button_pressed(1)) {
-				editedGREEN++;
-				editedGREEN = editedGREEN % 100;
-			}
-			if(is_button_pressed(2)) {
-				durationGREEN = editedGREEN;
-			}
+//			if(is_button_pressed(1)) {
+//				editedGREEN++;
+//				editedGREEN = editedGREEN % 100;
+//			}
+//			if(is_button_pressed(2)) {
+//				durationGREEN = editedGREEN;
+//			}
 			if(is_button_pressed(0)) {
-				reset_LEDS();
 				displayState = INIT;
 			}
 			break;
