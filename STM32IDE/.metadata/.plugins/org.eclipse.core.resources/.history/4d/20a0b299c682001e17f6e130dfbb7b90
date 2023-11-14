@@ -270,15 +270,6 @@ void blinking_LED_RED(void) {
 	}
 }
 
-void blinking_LED_YELLOW(void) {
-	if(timerLED_flag > 0) {
-		HAL_GPIO_TogglePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin);
-		HAL_GPIO_TogglePin(LED_YELLOW_2_GPIO_Port, LED_YELLOW_2_Pin);
-		set_timerLED(BLINKY_CYCLE);
-	}
-}
-
-
 void reset_LEDS(void) {
 	HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(GPIOA, LED_YELLOW_1_Pin, GPIO_PIN_SET);

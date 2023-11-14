@@ -18,7 +18,6 @@ enum DisplayState {
 enum DisplayState displayState = INIT;
 
 int editedRED = 0;
-int editedYELLOW = 0;
 
 void fsm_display_run(void) {
 	switch(displayState) {
@@ -46,13 +45,11 @@ void fsm_display_run(void) {
 				durationRED = editedRED;
 			}
 			if(is_button_pressed(0)) {
-				reset_LEDS();
 				displayState = BLINKY_YELLOW;
 			}
 			break;
 		case BLINKY_YELLOW:
 			//TODO: Implement YELLOW State
-			blinking_LED_YELLOW();
 			if(is_button_pressed(1)) {
 				editedYELLOW++;
 				editedYELLOW = editedYELLOW % 100;
