@@ -568,3 +568,23 @@ Finished building: Buttons-Switches.bin
  
 Finished building: Buttons-Switches.list
  
+18:48:41 **** Incremental Build of configuration Debug for project Buttons-Switches ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/fsm_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/fsm_display.d" -MT"Core/Src/fsm_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/fsm_display.o"
+arm-none-eabi-gcc -o "Buttons-Switches.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\MCU_Lab\MCU_Lab3\STM32IDE\Buttons-Switches\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Buttons-Switches.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Buttons-Switches.elf
+ 
+arm-none-eabi-size   Buttons-Switches.elf 
+arm-none-eabi-objdump -h -S  Buttons-Switches.elf  > "Buttons-Switches.list"
+arm-none-eabi-objcopy  -O ihex  Buttons-Switches.elf  "Buttons-Switches.hex"
+arm-none-eabi-objcopy  -O binary  Buttons-Switches.elf  "Buttons-Switches.bin"
+   text	   data	    bss	    dec	    hex	filename
+  10252	     32	   1720	  12004	   2ee4	Buttons-Switches.elf
+Finished building: default.size.stdout
+ 
+Finished building: Buttons-Switches.bin
+Finished building: Buttons-Switches.hex
+ 
+ 
+Finished building: Buttons-Switches.list
+ 

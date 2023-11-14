@@ -24,7 +24,7 @@ int editedGREEN = 0;
 void fsm_display_run(void) {
 	switch(displayState) {
 		case INIT:
-			if(!is_button_pressed(0)) {
+			if(is_button_released(0)) {
 				reset_state(1);
 				editedRED = durationRED;
 				editedYELLOW = durationYELLOW;
@@ -42,7 +42,7 @@ void fsm_display_run(void) {
 			break;
 		case BLINKY_RED:
 			//TODO: Implement RED State
-			if(!is_button_pressed(0)) {
+			if(is_button_released(0)) {
 				blinking_LED_RED();
 				update_buffer(editedRED, editedRED);
 				if(is_button_pressed(1)) {
@@ -61,7 +61,7 @@ void fsm_display_run(void) {
 			break;
 		case BLINKY_YELLOW:
 			//TODO: Implement YELLOW State
-			if(!is_button_pressed(0)) {
+			if(is_button_released(0)) {
 				blinking_LED_YELLOW();
 				update_buffer(editedYELLOW, editedYELLOW);
 				if(is_button_pressed(1)) {
@@ -80,7 +80,7 @@ void fsm_display_run(void) {
 			break;
 		case BLINKY_GREEN:
 			//TODO: Implement GREEN State
-			if(!is_button_pressed(0)) {
+			if(is_button_released(0)) {
 				blinking_LED_GREEN();
 				update_buffer(editedGREEN, editedGREEN);
 				if(is_button_pressed(1)) {
