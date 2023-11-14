@@ -1,0 +1,18 @@
+/*
+ * timer.h
+ *
+ *  Created on: Nov 10, 2023
+ *      Author: ACER
+ */
+
+#ifndef INC_TIMER_H_
+#define INC_TIMER_H_
+
+#include "main.h"
+#include "global.h"
+#include "input_reading.h"
+
+extern int timer_cycle;
+extern int timer_flag;
+
+#endif /* INC_TIMER_H_ */

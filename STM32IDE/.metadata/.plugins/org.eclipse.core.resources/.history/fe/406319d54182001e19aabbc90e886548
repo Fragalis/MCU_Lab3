@@ -1,0 +1,25 @@
+/*
+ * output_display.h
+ *
+ *  Created on: Nov 10, 2023
+ *      Author: ACER
+ */
+
+#ifndef INC_OUTPUT_DISPLAY_H_
+#define INC_OUTPUT_DISPLAY_H_
+
+#include "main.h"
+#include "global.h"
+#include "timer.h"
+
+void display_7SEG(unsigned char num);
+void update_7SEG(unsigned char index);
+void update_buffer(unsigned char num1, unsigned char num2);
+void scan_7SEG(void);
+
+void display_traffic_LEDS(void);
+void blinking_LED_RED(void);
+void blinking_LED_YELLOW(void);
+void blinking_LED_GREEN(void);
+
+#endif /* INC_OUTPUT_DISPLAY_H_ */

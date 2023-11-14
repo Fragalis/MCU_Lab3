@@ -54,7 +54,6 @@ void button_reading(void)
 			if(buttonBuffer[i] == BUTTON_IS_PRESSED)
 			{
 				counterForButtonHold[i]++;
-
 				// If button is on hold for 1 second, update the flag
 				if(counterForButtonHold[i] >= DURATION_FOR_HOLD) {
 					flagForButtonHold[i] = 1;
