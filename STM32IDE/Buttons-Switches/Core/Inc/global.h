@@ -10,6 +10,18 @@
 
 #include "main.h"
 
-#define LED_CYCLE	500
+/* DEFINE SECTION */
+// TIMER
+#define TIMER_CYCLE					10
+#define BLINKY_CYCLE					500
+
+// INPUT
+#define NO_OF_BUTTONS 					3
+#define DURATION_FOR_HOLD				100
+#define BUTTON_IS_PRESSED				GPIO_PIN_RESET
+#define BUTTON_IS_RELEASED				GPIO_PIN_SET
+
+// OUTPUT
+#define NO_OF_LEDS						4
 
 #endif /* INC_GLOBAL_H_ */
